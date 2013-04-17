@@ -7,7 +7,8 @@ front end for uploading files directly to s3
 ```json
 {
     "S3_ID": "***",
-    "S3_SECRET": "***/***"
+    "S3_SECRET": "***/***",
+    "S3_BUCKET": "torrentForge"
 }
 ```
 

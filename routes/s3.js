@@ -38,7 +38,7 @@ exports.sign = function (req, res) {
     var filePath = '/' + req.query.name;
     var contentType = req.query.type;
     console.log(process.env);
-    var url = new s3(nconf.get('S3_ID'), nconf.get('S3_SECRET'), 'torrentForge').signedUrl(filePath, contentType);
+    var url = new s3(nconf.get('S3_ID'), nconf.get('S3_SECRET'), nconf.get('S3_BUCKET')).signedUrl(filePath, contentType);
     res.send(200, url);
 };
 
