@@ -1,0 +1,8 @@
+{
+  "name": "content-s3-upload",
+  "dependencies": {
+    "jquery": "~1.9.1",
+    "bootstrap": "~2.3.1",
+    "underscore": "~1.4.4"
+  }
+}
