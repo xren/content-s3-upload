@@ -11,13 +11,13 @@ front end for uploading files directly to s3
 }
 ```
 
-- install nodemon
-
-`npm install -g nodemon`
-
 - install dependencies
 
 `npm install && bower install`
+
+- install nodemon
+
+`npm install -g nodemon`
 
 - launch server
 
