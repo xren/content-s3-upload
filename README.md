@@ -10,7 +10,14 @@ create a .env file with your s3 id and secret
 }
 
 install nodemon
+
 `npm install -g nodemon`
+
+install dependencies
+
+`npm install && bower install`
+
+launch server
 
 `nodemon app.js`
 
