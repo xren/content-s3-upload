@@ -7,13 +7,7 @@ describe('GET /', function () {
 
         request(app)
             .get('/')
-            .expect(200)
-            .end(function (err, res) {
-                if (err || res.statusCode !== 200) {
-                    return done(err);
-                }
-                done();
-            });
+            .expect(200, done);
     });
 });
 

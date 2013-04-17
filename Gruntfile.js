@@ -16,7 +16,7 @@ module.exports = function (grunt) {
         },
         mochaTest: {
             files: [
-                'test/index.js'
+                'test/*.js'
             ]
         },
         mochaTestConfig: {
@@ -27,5 +27,5 @@ module.exports = function (grunt) {
     });
 
     // Default task.
-    grunt.registerTask('default', ['jshint']);
+    grunt.registerTask('default', ['jshint', 'mochaTest']);
 };
