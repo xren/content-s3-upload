@@ -4,10 +4,10 @@ nconf.file({ file: '.env' });
 
 var getSignature = function (accessId, accessKey, httpMethod, bucket, path, contentType, expires) {
     var contentMD5 = '',
-        canonicalizedAmzHeaders = 'x-amz-acl:public-read',
+        canonicalizedAmzHeaders = '',
         canonicalizedResource = '/' + bucket + path,
         stringToSign = httpMethod + '\n' + contentMD5 + '\n' + contentType + '\n' + expires +
-                       '\n' + canonicalizedAmzHeaders + '\n' + canonicalizedResource,
+                       '\n' + canonicalizedAmzHeaders + canonicalizedResource,
         hmac = crypto.createHmac('sha1', accessKey);
 
     console.log('stringToSign', stringToSign);
@@ -37,7 +37,6 @@ exports.sign = function (req, res) {
     console.log('signing script!');
     var filePath = '/' + req.query.name;
     var contentType = req.query.type;
-    console.log(process.env);
     var url = new s3(nconf.get('S3_ID'), nconf.get('S3_SECRET'), nconf.get('S3_BUCKET')).signedUrl(filePath, contentType);
     res.send(200, url);
 };
