@@ -76,7 +76,11 @@ var uploadToS3 = function (file, url) {
 
 var uploadFile = function (file) {
     executeOnSignedUrl(file, function (signedURL) {
-        uploadToS3(file, signedURL);
+        // Ugly hack to deal with problem where '+' char inside the
+        // signature will be replaced by an empty space, we probably
+        // need a better encoding solution though
+        url = signedURL.replace(/\++/g, '%2B');
+        uploadToS3(file, url);
     });
 };
 
